@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OOP Bank ATM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+  <header><div class="brand">🏧 OOP BANK</div><div id="status">ATM ONLINE</div></header>
+  <main>
+    <section id="loginView" class="screen">
+      <div class="card">
+        <div class="logo">ATM</div><h1>Welcome</h1><p>Insert your card and enter PIN</p>
+        <label>Card Number</label><input id="cardNo" value="4111111111111111" maxlength="16">
+        <label>PIN</label><input id="pin" type="password" value="1234" maxlength="4">
+        <button onclick="login()">ENTER</button>
+        <small>Demo Card: 4111111111111111 &nbsp; PIN: 1234</small>
+      </div>
+    </section>
+
+    <section id="menuView" class="screen hidden">
+      <div class="dashboard">
+        <div class="welcome"><h1 id="customerName">Welcome</h1><p id="accountLabel"></p></div>
+        <div class="balance" id="balance">Rs. 0</div>
+        <div id="accountButtons" class="accounts"></div>
+        <div class="menu-grid">
+          <button onclick="balance()">💰 Check Balance</button>
+          <button onclick="deposit()">💵 Deposit</button>
+          <button onclick="withdraw()">💸 Withdraw</button>
+          <button onclick="transfer()">🔄 Transfer</button>
+          <button onclick="changePin()">🔐 Change PIN</button>
+          <button onclick="statement()">📄 Mini Statement</button>
+          <button onclick="cash()">🏦 ATM Cash</button>
+          <button class="danger" onclick="logout()">🚪 Exit</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<div id="modal" class="modal hidden"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+<script src="app.js"></script>
+</body>
+</html>
